@@ -86,12 +86,25 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var greeter = __webpack_require__(1);
+
+var node = document.querySelector("#app"); // const el = document.createElement("h2")
+// el.innerHTML = "Hello World"
+// node.appendChild(el)
+
+greeter();
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports) {
 
-var node = document.querySelector("#app");
-var el = document.createElement("h2");
-el.innerHTML = "Hello World";
-node.appendChild(el);
+function greeter() {
+  document.write("Greetings..");
+}
+
+module.exports = greeter;
 
 /***/ })
 /******/ ]);
