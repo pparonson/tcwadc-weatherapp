@@ -7448,6 +7448,8 @@ function (_Component) {
   _createClass(Greeter, [{
     key: "render",
     value: function render() {
+      var firstName = "Preston";
+      var message = "This is from a component";
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_GreeterMessage__WEBPACK_IMPORTED_MODULE_1__["default"], null));
     }
   }]);
@@ -7501,7 +7503,7 @@ function (_Component) {
     key: "render",
     value: function render() {
       var name = this.props.name;
-      var message = this.props.message;
+      var message = this.props.msg;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Hello ", name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, message));
     }
   }]);
@@ -7512,7 +7514,7 @@ function (_Component) {
 
 GreeterMessage.defaultProps = {
   name: "React",
-  message: "A Simple React Exercise Project"
+  msg: "This is a default message."
 };
 
 /***/ })

@@ -3,10 +3,12 @@ import React, { Component } from "react"
 import GreeterMessage from "./GreeterMessage"
 export default class Greeter extends Component {
     render() {
-        return (
-            <div>
-                <GreeterMessage />
-            </div>
-        );
+      let firstName = "Preston"
+      let message = "This is from a component"
+      return (
+          <div>
+              <GreeterMessage />
+          </div>
+      );
     }
 }
