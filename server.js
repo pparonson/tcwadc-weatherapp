@@ -1,5 +1,4 @@
 const path = require("path")
-
 const express = require("express")
 
 const HTML_FILE = path.join(__dirname, "dist", "index.html")

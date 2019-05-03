@@ -1,9 +1,12 @@
-const greeter = require("./components/Greeter")
+import React from "react"
+import ReactDOM from "react-dom"
+import App from "./components/App"
 
-const node = document.querySelector("#app")
+ReactDOM.render(
+  <App/>
+  , document.querySelector("#app")
+)
 
 // const el = document.createElement("h2")
 // el.innerHTML = "Hello World"
 // node.appendChild(el)
-
-greeter()

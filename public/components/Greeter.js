@@ -1,5 +1,11 @@
-function greeter() {
-  document.write("Greetings..")
-}
+import React, { Component } from "react"
 
-module.exports = greeter
+export default class Greeter extends Component {
+    render() {
+        return (
+            <div>
+                <h2>Hello World!</h2>
+            </div>          
+        );
+    }
+}
