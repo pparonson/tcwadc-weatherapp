@@ -7385,10 +7385,10 @@ var App =
 function (_Component) {
   _inherits(App, _Component);
 
-  function App() {
+  function App(props) {
     _classCallCheck(this, App);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(App).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(App).call(this, props));
   }
 
   _createClass(App, [{
@@ -7413,6 +7413,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _GreeterMessage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(15);
+/* harmony import */ var _GreeterForm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(16);
+/* harmony import */ var _GreeterForm__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_GreeterForm__WEBPACK_IMPORTED_MODULE_2__);
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -7434,6 +7436,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var Greeter =
 /*#__PURE__*/
 function (_Component) {
@@ -7450,7 +7453,10 @@ function (_Component) {
     value: function render() {
       var firstName = "Preston";
       var message = "This is from a component";
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_GreeterMessage__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_GreeterMessage__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        name: firstName,
+        message: message
+      }));
     }
   }]);
 
@@ -7503,7 +7509,7 @@ function (_Component) {
     key: "render",
     value: function render() {
       var name = this.props.name;
-      var message = this.props.msg;
+      var message = this.props.message;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Hello ", name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, message));
     }
   }]);
@@ -7514,8 +7520,14 @@ function (_Component) {
 
 GreeterMessage.defaultProps = {
   name: "React",
-  msg: "This is a default message."
+  message: "This is a default message."
 };
+
+/***/ }),
+/* 16 */
+/***/ (function(module, exports) {
+
+
 
 /***/ })
 /******/ ]);
