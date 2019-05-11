@@ -7450,7 +7450,10 @@ function (_Component) {
     value: function render() {
       var firstName = "Preston";
       var message = "This is from a component";
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_GreeterMessage__WEBPACK_IMPORTED_MODULE_1__["default"], null));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_GreeterMessage__WEBPACK_IMPORTED_MODULE_1__["default"], {
+        name: firstName,
+        msg: message
+      }));
     }
   }]);
 
@@ -7478,9 +7481,9 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
@@ -7494,17 +7497,42 @@ function (_Component) {
   _inherits(GreeterMessage, _Component);
 
   function GreeterMessage(props) {
+    var _this;
+
     _classCallCheck(this, GreeterMessage);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(GreeterMessage).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(GreeterMessage).call(this, props)); // initial state
+
+    _this.state = {
+      name: _this.props.name
+    };
+    _this.handleClick = _this.handleClick.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
   _createClass(GreeterMessage, [{
+    key: "handleClick",
+    value: function handleClick(e) {
+      e.preventDefault();
+      var nameRef = this.refs.name;
+      var name = nameRef.value; // setState also looks for changes and re-renders the components
+
+      nameRef.value = "";
+      typeof name === "string" && name.length > 0 ? this.setState({
+        name: name
+      }) : console.log("Invalid input: \"".concat(name, "\""));
+    }
+  }, {
     key: "render",
     value: function render() {
-      var name = this.props.name;
+      var name = this.state.name;
       var message = this.props.msg;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Hello ", name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, message));
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, "Hello ", name), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, message), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleClick
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        ref: "name"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Set Name"))));
     }
   }]);
 
