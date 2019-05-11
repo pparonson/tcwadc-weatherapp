@@ -22,8 +22,13 @@ export default class GreeterMessage extends Component {
   }
 
   render() {
+<<<<<<< HEAD
     const name = this.state.name
     const message = this.props.msg
+=======
+    const name = this.props.name
+    const message = this.props.message
+>>>>>>> ca51130956b4d690cc05345a5b65e9681294dde4
     return (
         <div>
             <h2>Hello {name}</h2>
@@ -42,5 +47,5 @@ export default class GreeterMessage extends Component {
 
 GreeterMessage.defaultProps = {
   name: "React"
-  , msg: "This is a default message."
+  , message: "This is a default message."
 }
