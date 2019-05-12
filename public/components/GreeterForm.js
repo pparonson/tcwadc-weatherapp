@@ -1,6 +1,10 @@
 import React, { Component } from "react"
 
 export default class GreeterForm extends Component {
+  constructor(props) {
+    super(props);
+    this.onFormSubmit = this.onFormSubmit.bind(this)
+  }
   onFormsubmit(e) {
     e.preventDefault()
     let nameRef = this.refs.name

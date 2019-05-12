@@ -1,5 +1,4 @@
 import React, { Component } from "react"
-import Greeter from "./Greeter"
 import GreeterMessage from "./GreeterMessage"
 import GreeterForm from "./GreeterForm"
 
@@ -13,6 +12,7 @@ export default class App extends Component {
     }
 
     handleNewName(name) {
+      console.log(`name: ${name}`)
       this.setState({ name: name })
     }
 
